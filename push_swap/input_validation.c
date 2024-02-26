@@ -6,7 +6,7 @@
 /*   By: aggrigor <aggrigor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 22:24:01 by aggrigor          #+#    #+#             */
-/*   Updated: 2024/02/26 22:47:13 by aggrigor         ###   ########.fr       */
+/*   Updated: 2024/02/26 22:23:33 by aggrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int	process_sub_args(char *arg, t_list *dummy, t_stack *stack, int *total_index)
 
 	i = 0;
 	sub_args = ft_split(arg);
-	if (sub_args == NULL || sub_args[0] == NULL)
+	if (sub_args == NULL ||  sub_args[0] == NULL)
 		return (0);
 	while (sub_args[i])
 	{

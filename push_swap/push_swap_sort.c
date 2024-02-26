@@ -6,7 +6,7 @@
 /*   By: aggrigor <aggrigor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 16:03:15 by aggrigor          #+#    #+#             */
-/*   Updated: 2024/02/26 22:47:01 by aggrigor         ###   ########.fr       */
+/*   Updated: 2024/02/26 20:42:47 by aggrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void	sort_5elem_stack(t_stack *stack_a, t_stack *stack_b)
 	while (stack_b->size > 0)
 		pa(stack_a, stack_b, PRINT_ACTION);
 }
-
+#include <stdio.h>
 // Sort grather than 5 items
 void	sort_big_stack(t_stack *stack_a, t_stack *stack_b)
 {
