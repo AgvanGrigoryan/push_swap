@@ -19,6 +19,38 @@ This repository includes:
   - up to 5 elements
 - Uses a butterfly-style strategy for bigger inputs.
 
+## Data structures
+
+The project uses a custom doubly linked list for both stacks.
+
+- `t_list` node:
+  - `num`: original integer value
+  - `index`: rank of `num` in sorted order
+  - `next` / `prev`: links for bidirectional traversal
+- `t_stack` container:
+  - `start`: top of stack
+  - `end`: bottom of stack
+  - `size`: current number of elements
+
+This layout makes stack operations (`sa/sb`, `pa/pb`, `ra/rb`, `rra/rrb`) efficient without array shifts.
+
+## Sorting approach
+
+Sorting behavior is selected by input size:
+
+- **2 elements**: single conditional swap if needed.
+- **3 elements**: small decision tree using `sa`, `ra`, `rra`.
+- **4-5 elements**:
+  1. push the smallest indexed values to stack B
+  2. sort remaining 3 elements in stack A
+  3. push values back from B to A
+- **More than 5 elements**:
+  1. assign each number a sorted `index`
+  2. use a butterfly pass to push ranges from A to B
+  3. rebuild A by always moving the current maximum index from B back to A
+
+The large-input path combines a chunk-like push phase with a max-first retrieval phase to keep operation count lower.
+
 ## Build
 
 From the project source directory:
